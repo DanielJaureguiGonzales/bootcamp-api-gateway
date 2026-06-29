@@ -12,15 +12,15 @@ public class GatewayRoutesConfig {
     public RouteLocator customRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("customer-service", route -> route
-                        .path("/api/customer/**")
+                        .path("/api/customers/**")
                         .uri("lb://CUSTOMER-SERVICE")
                 )
                 .route("account-service", route -> route
-                        .path("/api/account/**")
+                        .path("/api/accounts/**")
                         .uri("lb://ACCOUNT-SERVICE")
                 )
                 .route("credit-service", route -> route
-                        .path("/api/credit/**")
+                        .path("/api/credits/**")
                         .uri("lb://CREDIT-SERVICE")
                 )
                 .build();
